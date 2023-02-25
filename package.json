@@ -1,7 +1,11 @@
 {
-  "name": "@nestboot/logger",
-  "version": "1.0.0-beta",
+  "name": "@nsboot/log4js",
+  "version": "1.0.0",
+  "private": false,
   "description": "based on nestjs log4js component",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
     "format": "prettier --write \"{lib,test}/**/*.ts\"",
@@ -24,7 +28,6 @@
     "log4js",
     "decorator"
   ],
-  "author": "tansincosy",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tansincosy/nestboot-logger/issues"
@@ -64,5 +67,11 @@
   },
   "dependencies": {
     "lodash": "^4.17.21"
-  }
+  },
+  "types": "./index.d.ts",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "author": ""
 }
