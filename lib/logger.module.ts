@@ -8,10 +8,8 @@ import {
 } from '@nestjs/common';
 import { LoggerConfigService } from './logger-config.service';
 import {
-  APP_KEY,
   CONFIG,
-  LOG_CONFIG_FILE_PATH,
-  LOG_CONFIG_LEVEL,
+  LOG_CONFIG_KEY,
   LOG_CONFIG_OPTIONS,
   LOG_METADATA,
   LOG_METADATA_CONFIG,
@@ -41,13 +39,9 @@ export class LoggerModule implements OnModuleInit {
         const registerOptions = options;
         const configService: ConfigService = params[inject.indexOf(CONFIG)];
         if (configService) {
-          const name = configService.get(APP_KEY) as any;
-          const path = configService.get(LOG_CONFIG_FILE_PATH, 'log');
-          const level = configService.get(LOG_CONFIG_LEVEL, 'info');
+          const configYAML = configService.get<LogConfig>(LOG_CONFIG_KEY);
           options = {
-            name,
-            path,
-            level,
+            ...configYAML,
           };
         }
         return Object.assign(registerOptions, options);
