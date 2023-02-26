@@ -1,4 +1,4 @@
-# @nestboot/logger
+# @nsboot/logger
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
@@ -116,4 +116,4 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+@nsboot/logger is [MIT licensed](LICENSE).
